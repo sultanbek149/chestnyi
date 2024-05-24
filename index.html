@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="loog.png">
+
+    <link rel="stylesheet" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+        rel="stylesheet" />
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- <script defer src="swiper.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/plugins/ranges.js"></script>
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    <!-- <script defer src="app.js"></script> -->
+    <script defer src="rent.js"></script>
+    <title>CHESTNYI.TOUR</title>
+</head>
+
+<body>
+
+    <div class="container min-h-[624px] h-full">
+        <div class="header mx-auto">
+            <div class="logo flex gap-2 items-center" style="width: 100%; padding-inline: 10px;">
+                <img src="loog.png" class="full " alt="logo">
+                <p style="width: 100%; flex: 1;">Честный Тур</p>
+            </div>
+        </div>
+
+        <div class="mySwiper">
+            <div class="swiper">
+                <div class="swiper-slide">
+                    <div class="banner relative rounded-[10px] overflow-hidden">
+                        <div class="pb-[78%]"></div>
+                        <div class="banner__img absolute inset-0 bg-cover" style="--bg-img: url('pexels.jpg')">
+                        </div>
+                        <div class="banner__content absolute inset-0 overflow-hidden">
+                            <div class="photo-gradient  h-full flex justify-center p-4">
+                                <div class="banner__body flex w-full">
+                                    <div class="title text-white">
+                                        <!-- Услуги проката авто быстро и по доступной цене -->
+                                        Честный Тур - Прозрачность во всём!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="login-root">
+            <div class="box-root flex-flex flex-direction--column" style="flex-grow: 1;">
+                <div class="box-root flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+                    <div class="formbg-outer">
+                        <div class="formbg">
+                            <div class="formbg-inner">
+                                <form id="rentForm" action="POST">
+                                    <div class="field padding-bottom--24">
+                                        <label for="username">Имя</label>
+                                        <input type="text" name="username" placeholder="Введите своё имя" id="username"
+                                            required="">
+                                    </div>
+
+                                    <div class="field padding-bottom--24">
+                                        <label for="username">Город вылета</label>
+                                        <input type="text" name="username" value="Алматы" id="сity" required>
+                                    </div>
+
+                                    <div class="field padding-bottom--24">
+                                        <label for="username">Страна, курорт</label>
+                                        <input type="text" name="username" value="ОАЭ" id="country" required>
+                                    </div>
+
+
+                                    <!-- <div class="flex" style="column-gap: 5px;"> -->
+                                    <div class="field" style="flex: 1;">
+                                        <label>Дата вылета</label>
+                                        <input id="dateRange" type="text" class="serviceInp form-control js-picker-from"
+                                            placeholder="dd.mm.yyyyy" autocomplete="off" required />
+                                    </div>
+                                    <div class="flex items-center field check"
+                                        style="justify-content: space-between; padding-bottom: 6px; padding-top: 6px;">
+                                        <label style="margin-bottom: 0; font-weight: 500;">Гибкий вылет. Дата +/- 2
+                                            дня</label>
+                                        <input id="plusminus" type="checkbox" class="serviceInp form-control" checked />
+                                    </div>
+
+                                    <div class="flex items-center num field padding-bottom--24"
+                                        style="justify-content: space-between;">
+                                        <label style="margin-bottom: 0; font-weight: 500; width: 100%;">Количество
+                                            ночей</label>
+                                        <input id="nights" type="text" class="serviceInp form-control" placeholder="7-9"
+                                            autocomplete="off" required />
+                                    </div>
+
+                                    <div class="flex items-center field padding-bottom--24" style="justify-content: space-between;">
+                                        <label style="margin-bottom: 0; font-weight: 500; width: 100%;">Количество
+                                            взрослых</label>
+                                        <input id="adults" type="number" class="serviceInp form-control" value="2"  required />
+                                    </div>
+
+                                    <!-- </div> -->
+
+
+                                    <!-- <div class="field padding-bottom--24">
+                        <label>День сдачи</label>
+                        <input id="toDate" type="text" class="serviceInp form-control js-picker-to"
+                            placeholder="dd.mm.yyyyy, HH" />
+                    </div> -->
+                                    <div class="field padding-bottom--24">
+                                        <label for="username">Телефон</label>
+                                        <input class="serviceInp" type="tel" name="phone" id="phone"
+                                            placeholder="Введите номер телефона" required
+                                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                                    </div>
+
+                                    <div class="field padding-bottom--24">
+                                        <input type="submit" name="submit" value="Отправить">
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="footer-link padding-top--24">
+                            <div class="listing  padding-bottom--24 flex-flex flex-col">
+                                <span><a>© Chestnyi.tour</a></span>
+                                <span><a>Политика конфиденциальности</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="open-modal" class="modal-window">
+            <div>
+                <h1>Ваша заявка в обработке! <br> 🎉🙌</h1>
+                <div>Благодарим что выбрали нас!</div>
+            </div>
+        </div>
+
+        <div class="present-city" data-present>
+            <div class="tbar">
+                <div class="tbar-title">
+                    Выберите город
+                </div>
+                <button class="back">
+                    <span class="material-symbols-outlined back">arrow_back_ios</span>
+                </button>
+            </div>
+
+            <div class="present-body">
+                <div class="cityRent flex flex-col">
+                    <div class="item">
+                        <span>Астана</span>
+                    </div>
+                    <div class="item">
+                        <span>Алматы</span>
+                    </div>
+                    <div class="item">
+                        <span>Атырау</span>
+                    </div>
+                    <div class="item">
+                        <span>Актау</span>
+                    </div>
+                    <div class="item">
+                        <span>Актобе</span>
+                    </div>
+                    <div class="item">
+                        <span>Жанаозен</span>
+                    </div>
+                    <div class="item">
+                        <span>Караганда</span>
+                    </div>
+                    <div class="item">
+                        <span>Кокшетау</span>
+                    </div>
+                    <div class="item">
+                        <span>Кызылорда</span>
+                    </div>
+                    <div class="item">
+                        <span>Костанай</span>
+                    </div>
+                    <div class="item">
+                        <span>Павлодар</span>
+                    </div>
+                    <div class="item">
+                        <span>Петропавловск</span>
+                    </div>
+                    <div class="item">
+                        <span>Семей</span>
+                    </div>
+                    <div class="item">
+                        <span>Тараз</span>
+                    </div>
+                    <div class="item">
+                        <span>Туркестан</span>
+                    </div>
+                    <div class="item">
+                        <span>Талдыкорган</span>
+                    </div>
+                    <div class="item">
+                        <span>Усть-Каменогорск</span>
+                    </div>
+                    <div class="item">
+                        <span>Уральск</span>
+                    </div>
+                    <div class="item">
+                        <span>Шымкент</span>
+                    </div>
+                    <div class="item">
+                        <span>Шу</span>
+                    </div>
+                    <div class="item">
+                        <span>Экибастуз</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="present-otherServices" data-present>
+            <div class="tbar">
+                <button class="back">
+                    <span class="material-symbols-outlined back">arrow_back_ios</span>
+                </button>
+
+                <div class="tbar-title">
+                    Выберите услуги
+                </div>
+            </div>
+
+            <div class="present-body">
+                <div class="flex flex-col">
+                    <div class="item" data-otherService>
+                        <img src="service1.png" alt="service">
+                        <span class="service">Встреча/проводы</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay"></div>
+    </div>
+</body>
+
+</html>
