@@ -12,6 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nova+Mono&display=swap"
+        rel="stylesheet">
+
     <link
         href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
         rel="stylesheet" />
@@ -41,7 +47,9 @@
     <div class="container min-h-[624px] h-full">
         <div class="header mx-auto">
             <div class="logo flex gap-2 items-center" style="width: 100%; padding-inline: 10px;">
-                <img src="loog.png" class="full " alt="logo">
+                <div class="logo-h">
+                    <img src="loog.png" class="full " alt="logo">
+                </div>
                 <p style="width: 100%; flex: 1;">Честный Тур</p>
             </div>
         </div>
@@ -51,7 +59,8 @@
                 <div class="swiper-slide">
                     <div class="banner relative rounded-[10px] overflow-hidden">
                         <div class="pb-[78%]"></div>
-                        <div class="banner__img absolute inset-0 bg-cover" style="--bg-img: url('pexels.jpg')">
+                        <div class="banner__img absolute inset-0 bg-cover"
+                            style="--bg-img: url('https://images.unsplash.com/photo-1536919613842-558d20933582?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
                         </div>
                         <div class="banner__content absolute inset-0 overflow-hidden">
                             <div class="photo-gradient  h-full flex justify-center p-4">
@@ -85,7 +94,7 @@
 
                                     <div class="field padding-bottom--24">
                                         <label for="username">Город вылета</label>
-                                        <input type="text" name="username" value="Алматы" id="сity" required>
+                                        <input type="text" name="username" value="Алматы" id="city" required>
                                     </div>
 
                                     <div class="field padding-bottom--24">
@@ -102,25 +111,34 @@
                                     </div>
                                     <div class="flex items-center field check"
                                         style="justify-content: space-between; padding-bottom: 6px; padding-top: 6px;">
-                                        <label style="margin-bottom: 0; font-weight: 500;">Гибкий вылет. Дата +/- 2
+                                        <label style="margin-bottom: 0; font-weight: 600;">Гибкий вылет. Дата +/- 2
                                             дня</label>
                                         <input id="plusminus" type="checkbox" class="serviceInp form-control" checked />
                                     </div>
 
                                     <div class="flex items-center num field padding-bottom--24"
                                         style="justify-content: space-between;">
-                                        <label style="margin-bottom: 0; font-weight: 500; width: 100%;">Количество
+                                        <label style="margin-bottom: 0; font-weight: 600; width: 100%;">Количество
                                             ночей</label>
                                         <input id="nights" type="text" class="serviceInp form-control" placeholder="7-9"
                                             autocomplete="off" required />
                                     </div>
 
-                                    <div class="flex items-center field padding-bottom--24" style="justify-content: space-between;">
-                                        <label style="margin-bottom: 0; font-weight: 500; width: 100%;">Количество
+                                    <div class="flex items-center field" style="justify-content: space-between;">
+                                        <label style="margin-bottom: 0; font-weight: 600; width: 100%;">Количество
                                             взрослых</label>
-                                        <input id="adults" type="number" class="serviceInp form-control" value="2"  required />
+                                        <input id="adults" type="number" class="serviceInp form-control" value="2"
+                                            required />
                                     </div>
 
+                                    <div class="flex items-center field check padding-bottom--24"
+                                        style="justify-content: space-between; padding-bottom: 6px; padding-top: 6px;">
+                                        <label style="margin-bottom: 0; font-weight: 600;">Наличие детей</label>
+                                        <input id="child" type="checkbox" class="serviceInp form-control">
+                                    </div>
+                                    <div class="field childHolder">
+                                        <input type="number" name="username" placeholder='Количество детей' id="childCount">
+                                    </div>
                                     <!-- </div> -->
 
 
@@ -136,17 +154,17 @@
                                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                                     </div>
 
-                                    <div class="field padding-bottom--24">
+                                    <div class="field ">
                                         <input type="submit" name="submit" value="Отправить">
                                     </div>
                                 </form>
 
                             </div>
                         </div>
-                        <div class="footer-link padding-top--24">
-                            <div class="listing  padding-bottom--24 flex-flex flex-col">
+                        <div class="footer-link">
+                            <div class="listing  padding-bottom--24 flex-flex flex-col items-center">
                                 <span><a>© Chestnyi.tour</a></span>
-                                <span><a>Политика конфиденциальности</a></span>
+                                <!-- <span><a>Политика конфиденциальности</a></span> -->
                             </div>
                         </div>
                     </div>
@@ -189,7 +207,7 @@
                     <div class="item">
                         <span>Актобе</span>
                     </div>
-                    <div class="item">
+                    <!-- <div class="item">
                         <span>Жанаозен</span>
                     </div>
                     <div class="item">
@@ -227,16 +245,16 @@
                     </div>
                     <div class="item">
                         <span>Уральск</span>
-                    </div>
+                    </div> -->
                     <div class="item">
                         <span>Шымкент</span>
                     </div>
-                    <div class="item">
+                    <!-- <div class="item">
                         <span>Шу</span>
                     </div>
                     <div class="item">
                         <span>Экибастуз</span>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>

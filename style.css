@@ -411,16 +411,26 @@ video {
   text-decoration-line: underline;
 }
 body {
-  background: #fff;
-  font-family: "Open Sans", sans-serif;
+  background: #f3d621;
+  font-family: "Montserrat", sans-serif;
 }
+
+.mySwiper {
+  margin-bottom: 30px;
+}
+
+.footer-link {
+  background: #f3d621;
+}
+
 .logo p {
-  font-family: Merriweather, serif;
+  /* font-family: Merriweather, serif; */
 }
 
 .logo {
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
+  /* overflow: hidden; */
 }
 
 .logo-banner {
@@ -431,18 +441,34 @@ body {
 }
 
 .logo img {
-  width: 3rem;
+  /* visibility: hidden; */
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.logo-h {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 11;
+  background-color: #fff;
+  padding: 3.3px;
   margin-left: 1px;
+  /* position: absolute; */
 }
 
 .logo p {
   font-weight: 600;
   font-size: 20px;
+  /* color: #fff; */
 }
 
 .photo-gradient {
-  background: linear-gradient(180deg, transparent -22.37%, rgba(0, 0, 0, 0) 0%),
-    linear-gradient(0deg, hsla(0, 0%, 0%, 0.3), hsla(0, 0%, 0%, 0));
+  background: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, 0) 0%),
+    linear-gradient(0deg, hsla(0, 0%, 0%, 0.1), hsla(0, 0%, 0%, 0));
   padding-block: 12px;
   padding-inline: 12px;
 }
@@ -554,7 +580,7 @@ a {
   text-decoration: unset;
 }
 .login-root {
-  background: #fff;
+  background: #f3d621;
   display: flex;
   width: 100%;
   /* min-height: 100vh; */
@@ -647,10 +673,10 @@ a {
   margin: 0px auto;
   width: 100%;
   max-width: 448px;
-  background: white;
+  background: #f3d621;
   border-radius: 4px;
-  box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px,
-    rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+  /* box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px,
+    rgba(0, 0, 0, 0.12) 0px 3px 6px 0px; */
 }
 /* span {
   display: block;
@@ -686,12 +712,13 @@ label {
   min-height: 44px;
   border: unset;
   border-radius: 4px;
-  outline-color: #f0d41b;
+  outline-color: #000;
+  border: none;
   background-color: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+  /* box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
     rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.16) 0px 0px 0px 1px,
     rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-    rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px; */
 }
 
 .field.check input {
@@ -700,10 +727,20 @@ label {
   box-shadow: none;
   width: 25px;
   min-height: 38px;
-  outline: rgba(0, 0, 0, .1);
-  border: 1px solid rgba(0, 0, 0, .1);
+  outline: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.childHolder {
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.childHolder.active {
+  height: fit-content;
+  padding-bottom: 24px;
+}
 
 .field textarea {
   font-size: 16px;
@@ -722,12 +759,12 @@ label {
 }
 
 input[type="submit"] {
-  background-color: #f0d41b;
+  background-color: #fff;
   /* box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
     rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgb(84, 105, 212) 0px 0px 0px 1px,
     rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
     rgba(60, 66, 87, 0.08) 0px 2px 5px 0px; */
-  color: #fff;
+  color: #000;
   font-weight: 600;
   cursor: pointer;
 }
@@ -795,7 +832,7 @@ a.ssolink {
   line-height: 28px;
   /* margin-inline: 25px; */
   text-align: center;
-  color: #1a1f36;
+  color: #fff;
   /* text-align: center; */
 }
 
@@ -814,9 +851,8 @@ a.ssolink {
 }
 
 .listing a {
-  color: #697386;
+  color: #000;
   font-weight: 600;
-  margin: 0 10px;
 }
 
 .animationRightLeft {
@@ -858,7 +894,8 @@ a.ssolink {
 
 .formbg-inner {
   padding-inline: 20px;
-  padding-block: 40px;
+  padding-top: 0px;
+  padding-bottom: 40px;
 }
 
 @media (min-width: 375px) {
@@ -966,7 +1003,6 @@ a.ssolink {
   color: #6398e7;
   background: rgb(238, 245, 252);
 }
-
 
 .list input:checked + label::before {
   content: "done";
@@ -1449,7 +1485,6 @@ h2 {
   z-index: 1;
 }
 
-
 /* .mobile {
   position: absolute;
 } */
@@ -1457,6 +1492,3 @@ h2 {
 [data-present] {
   z-index: 1003;
 }
-
-
-

@@ -1,44 +1,37 @@
-
 const presentCity = document.querySelector('.present-city')
-const presentRentData = document.querySelector('.present-rentData')
-const tbarTitleRentData = document.querySelector('.present-rentData .tbar-title')
-const presentRentCars = document.querySelector('.present-rentCars')
-const presentCarModel = document.querySelector('.present-rentModels')
-const presentOtherServices = document.querySelector('.present-otherServices')
+// const presentRentData = document.querySelector('.present-rentData')
+// const tbarTitleRentData = document.querySelector('.present-rentData .tbar-title')
+// const presentOtherServices = document.querySelector('.present-otherServices')
+const childInp = document.querySelector('#child')
 
 
+const cityInp = document.querySelector('#city')
+console.log(cityInp);
 
-const rentServices = document.querySelectorAll('.servicesRent .item')
 
-rentServices.forEach((el, index) => {
-    el.addEventListener('click', () => {
-        rentService = { name: el.innerText, id: el.dataset.service }
-        presentCity.classList.toggle('active')
-    })
+cityInp.addEventListener('click', () => {
+    presentCity.classList.toggle('active')
 })
 
 const rentCities = document.querySelectorAll('.cityRent .item')
-let rentCity = ''
-
 
 rentCities.forEach(el => {
 
     el.addEventListener('click', () => {
-        rentCity = el.innerText
-
-
-        if (rentService.id === 'cars') {
-            tbarTitleRentData.textContent = 'Выберите машину'
-            presentRentData.querySelector("[data-service='cars']").style.display = 'inline'
-            document.querySelectorAll(`[data-service=${rentService.id}] .serviceInp`).forEach(el => el.required = true)
-        }
-        presentRentData.classList.toggle('active')
-
-
-    })
+        cityInp.value = el.innerText
+        backFromRentCity.click()
+    }
+    )
 })
 
-let objectDate = new Date(new Date().getTime() + 72 * 60 * 60 * 1000)
+
+const childCheck = document.querySelector('#child')
+childCheck.addEventListener('click', () => {
+    document.querySelector('.childHolder').classList.toggle('active')
+})
+
+
+let objectDate = new Date(new Date().getTime() + 120 * 60 * 60 * 1000)
 
 // Extract the day, month, and year
 const day = String(objectDate.getDate()).padStart(2, '0');
@@ -123,11 +116,11 @@ const sendMessage = () => {
 
 const reset = () => {
     document.querySelectorAll('.serviceInp').forEach(el => el.value = '')
-    document.querySelectorAll(`[data-service=${rentService.id}] .serviceInp`).forEach(el => el.required = false)
-    if (rentService.id === 'cars') {
-        carModelField.classList.toggle('hide')
-    }
-    presentRentData.querySelector(`[data-service="${rentService.id}"]`).style.display = 'none'
+    // document.querySelectorAll(`[data-service=${rentService.id}] .serviceInp`).forEach(el => el.required = false)
+    // if (rentService.id === 'cars') {
+    //     carModelField.classList.toggle('hide')
+    // }
+    // presentRentData.querySelector(`[data-service="${rentService.id}"]`).style.display = 'none'
 
 }
 
