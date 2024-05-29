@@ -461,9 +461,9 @@ body {
 }
 
 .logo p {
-  font-weight: 600;
-  font-size: 20px;
-  /* color: #fff; */
+  font-weight: 700;
+  font-size: 23px;
+  color: #fff;
 }
 
 .photo-gradient {
@@ -691,8 +691,9 @@ label {
 .reset-pass a,
 label {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   display: block;
+  /* color: #ffffff; */
 }
 .reset-pass > a {
   text-align: right;
