@@ -1,12 +1,11 @@
 const presentCity = document.querySelector('.present-city')
 // const presentRentData = document.querySelector('.present-rentData')
 // const tbarTitleRentData = document.querySelector('.present-rentData .tbar-title')
-// const presentOtherServices = document.querySelector('.present-otherServices')
+const presentCountries = document.querySelector('.present-country')
 const childInp = document.querySelector('#child')
 
 
 const cityInp = document.querySelector('#city')
-console.log(cityInp);
 
 
 cityInp.addEventListener('click', () => {
@@ -20,14 +19,27 @@ rentCities.forEach(el => {
     el.addEventListener('click', () => {
         cityInp.value = el.innerText
         backFromRentCity.click()
-    }
-    )
+    })
 })
 
+const countryInp = document.querySelector('#country')
+countryInp.addEventListener('click', () => {
+    presentCountries.classList.toggle('active')
+})
 
+const countries = document.querySelectorAll('.countries .item')
+countries.forEach(el => {
+    el.addEventListener('click', () => {
+        countryInp.value = el.innerText
+        backFromCountries.click()
+    })
+})
+
+const childCount = document.querySelector('#childCount')
 const childCheck = document.querySelector('#child')
 childCheck.addEventListener('click', () => {
     document.querySelector('.childHolder').classList.toggle('active')
+    childCount.required = !childCount.required
 })
 
 
@@ -49,49 +61,42 @@ const picker = new Litepicker({
     minDate: objectDate - 1
 });
 
-const username = document.querySelector('#name')
-const phoneFor = document.querySelector('#phoneFor')
-
-
-
-const phone = document.querySelector('#phone')
+const username = document.querySelector('#username')
+const city = document.querySelector('#city')
+const country = document.querySelector('#country')
 const dateRange = document.querySelector('#dateRange')
 dateRange.value = formattedDate
-const gruzTextarea = document.querySelector('#gruzTextarea')
-const equipmentsTextarea = document.querySelector('#equipmentsTextarea')
+const plusminus = document.querySelector('#plusminus')
+const nights = document.querySelector('#nights')
+const adults = document.querySelector('#adults')
+const phone = document.querySelector('#phone')
+
 const modal = document.querySelector('#open-modal')
+
+
+const rentForm = document.querySelector('#rentForm')
+rentForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    sendMessage()
+})
 
 
 
 const sendMessage = () => {
-
-    // const t = "6569603838:AAF_gfsCWK5fughj7bevQswTyn4ruxq1t8g"
-    // const cid = -1002112977648
-    // const url = `https://api.telegram.org/bot${t}/sendMessage?chat_id=${cid}&text=${text}&parse_mode=html`
-
-    let t
-    let cid
-    let text
-
-    if (rentService.id === 'cars') {
-        t = "6435795574:AAHDuWdPQpcNI3yPekGjbV1GRPU7SRFw4Q4"
-        cid = -4135021717
-
-        if (serviceStatus === 'rentFor') {
-            text = `<b>Данные с сайта:</b> %0A<b>Статус:</b> Cдать под Аренду %0A<b>Вид услуги:</b> ${rentService.name} %0A<b>Город:</b> ${rentCity}%0A<b>Имя:</b> ${username.value} %0A<b>Телефон:</b> ${phoneFor.value}`
-        } else {
-            text = `<b>Данные с сайта:</b> %0A<b>Статус:</b> Арендовать %0A<b>Вид услуги:</b> ${rentService.name}%0A<b>Марка машины:</b> ${inputCarName.value}%0A<b>Модель машины:</b> ${inputCarModel.value}%0A<b>Период Аренды:</b> ${dateRange.value} %0A<b>Город:</b> ${rentCity}%0A<b>Телефон:</b> ${phone.value}`
-        }
-    }
+    const text = `<b>Данные с сайта:</b> %0A<b>Имя:</b> ${username.value} %0A<b>Город вылета</b> ${city.value} %0A<b>Страна:</b> ${country.value} %0A<b>Дата вылета:</b> ${dateRange.value} %0A<b>Гибкий вылет(+/- 2 дня):</b> ${plusminus.checked ? 'Есть' : 'Отсуствует'} %0A<b>Количество ночей:</b> ${nights.value} %0A<b>Количество взрослых:</b> ${adults.value} %0A<b>Наличие детей:</b> ${childCheck.checked ? 'Есть' : 'Отсуствует'} %0A<b>Количество детей: </b> ${childCheck.checked ? childCount.value : 0} %0A<b>Телефон: </b> ${phone.value} %0A`
 
 
-    picker.clearSelection()
 
-
-    console.log(text);
-
-
+    const t = "7278696132:AAGj63oJ3wQweBjDn_cAZstJ3o4K6XayuLg"
+    const cid = -4220764074
     const url = `https://api.telegram.org/bot${t}/sendMessage?chat_id=${cid}&text=${text}&parse_mode=html`
+
+
+
+
+    // picker.clearSelection()
+    // console.log(text);
+
 
     const xhr = new XMLHttpRequest();
 
@@ -111,19 +116,30 @@ const sendMessage = () => {
 
     reset()
 
-    document.querySelectorAll('[data-present]').forEach(el => el.classList.remove('active'))
 }
 
 const reset = () => {
-    document.querySelectorAll('.serviceInp').forEach(el => el.value = '')
+    username.value = ''
+    nights.value = ''
+    if (childCheck.checked === true) {
+        childCheck.checked = false
+        childCount.required = false
+        document.querySelector('.childHolder').classList.remove('active')
+    }
+
+    childCount.value = ""
+    phone.value = ""
+
+
+    // document.querySelectorAll('.serviceInp').forEach(el => el.value = '')
     // document.querySelectorAll(`[data-service=${rentService.id}] .serviceInp`).forEach(el => el.required = false)
     // if (rentService.id === 'cars') {
     //     carModelField.classList.toggle('hide')
     // }
     // presentRentData.querySelector(`[data-service="${rentService.id}"]`).style.display = 'none'
 
-}
 
+}
 
 
 const backFromRentCity = document.querySelector('.present-city .back')
@@ -131,9 +147,8 @@ backFromRentCity.addEventListener('click', () => {
     presentCity.classList.toggle('active')
 })
 
-
-const backFromOtherServices = document.querySelector('.present-otherServices .back')
-backFromOtherServices.addEventListener('click', () => {
-    presentOtherServices.classList.toggle('active')
+const backFromCountries = document.querySelector('.present-country .back')
+backFromCountries.addEventListener('click', () => {
+    presentCountries.classList.toggle('active')
 })
 
