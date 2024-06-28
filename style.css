@@ -1264,8 +1264,8 @@ a.ssolink {
   top: 0;
   left: 100vw;
   right: -100vw;
-  bottom: -3px;
   width: 100vw;
+  bottom: 0;
   padding-bottom: 20px;
   color: #000;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px rgba(0, 0, 0, 0.14),
@@ -1280,14 +1280,6 @@ a.ssolink {
 .present-city.active {
   right: 0;
   left: 0;
-}
-
-body:has(.present-city.active) {
-  overflow-y: hidden;
-}
-
-body:has(.present-country.active) {
-  overflow-y: hidden;
 }
 
 .cityRent {
@@ -1310,13 +1302,6 @@ body:has(.present-country.active) {
   gap: 10px;
 }
 
-/* .present-country {
-  height: fit-content;
-}
-.present-city {
-  height: fit-content;
-} */
-
 .present-rentData,
 .present-rentFor,
 .present-rentCars,
@@ -1329,7 +1314,7 @@ body:has(.present-country.active) {
   left: 100vw;
   right: -100vw;
   width: 100vw;
-  bottom: -3px;
+  bottom: 0;
   padding-bottom: 20px;
   color: #000;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px rgba(0, 0, 0, 0.14),
@@ -1622,7 +1607,7 @@ h3 {
   font-weight: 500;
   background-color: #fff;
   border-radius: 4px;
-  padding-inline: 10px;
+  padding-inline:10px;
   padding-top: 7px;
   padding-bottom: 6px;
   margin-bottom: 10px;
@@ -1638,6 +1623,6 @@ h3 {
   text-align: center;
 }
 
-input[type="button"] {
+input[type='button'] {
   text-align: start;
 }
