@@ -1519,9 +1519,9 @@ h3 {
   background-color: #fff;
 }
 
-.swiper-slide {
+.reviews .swiper-slide {
   max-width: 300px;
-  max-height: 600px;
+  max-height: 700px;
 }
 
 .swiper-slide {
