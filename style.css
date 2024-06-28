@@ -1690,3 +1690,7 @@ input[type="submit"]:hover {
     box-shadow: 0 0 #f6040400;
   }
 }
+
+input {
+  font-weight: 500;
+}
