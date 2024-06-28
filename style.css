@@ -1282,6 +1282,10 @@ a.ssolink {
   left: 0;
 }
 
+body:has(.present-city.active) {
+  overflow-y: hidden;
+}
+
 .cityRent {
   gap: 10px;
 }

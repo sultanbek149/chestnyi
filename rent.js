@@ -133,7 +133,7 @@ const sendMessage = () => {
     })
 
 
-    const text = `<b>Данные с сайта:</b> %0A<b>Имя:</b> ${username.value} %0A<b>Город вылета</b> ${city.value} %0A<b>Страна:</b> ${country.value} %0A<b>Дата вылета:</b> ${dateRange.value} %0A<b>Гибкий вылет(+/- 2 дня):</b> ${plusminus.checked ? 'Есть' : 'Отсуствует'} %0A<b>Количество ночей:</b> ${nights.value} %0A<b>Количество взрослых:</b> ${adults.value} %0A<b>Наличие детей:</b> ${childCheck.checked ? 'Есть' : 'Отсуствует'} %0A<b>Информация о детях: </b> %0A${childCheck.checked ? childContent : 'Отсуствует'} %0A<b>Телефон: </b> ${phone.value} %0A`
+    const text = `<b>Данные с сайта:</b> %0A<b>Имя:</b> ${username.value} %0A<b>Город вылета:</b> ${city.value} %0A<b>Страна:</b> ${country.value} %0A<b>Дата вылета:</b> ${dateRange.value} %0A<b>Гибкий вылет(+/- 2 дня):</b> ${plusminus.checked ? 'Есть' : 'Отсуствует'} %0A<b>Количество ночей:</b> ${nights.value} %0A<b>Количество взрослых:</b> ${adults.value} %0A<b>Наличие детей:</b> ${childCheck.checked ? 'Есть' : 'Отсуствует'} %0A<b>Информация о детях: </b> %0A${childCheck.checked ? childContent : 'Отсуствует'} %0A<b>Телефон: </b> ${phone.value} %0A`
 
 
     console.log(text)
