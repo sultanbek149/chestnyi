@@ -35,11 +35,11 @@ countries.forEach(el => {
     })
 })
 
-const childCount = document.querySelector('#childCount')
+// const childCount = document.querySelector('#childCount')
 const childCheck = document.querySelector('#child')
 childCheck.addEventListener('click', () => {
     document.querySelector('.childHolder').classList.toggle('active')
-    childCount.required = !childCount.required
+    // childCount.required = !childCount.required
 })
 
 
@@ -80,12 +80,63 @@ rentForm.addEventListener('submit', (e) => {
     sendMessage()
 })
 
+let childrenCount = 0;
+const ageButtons = document.querySelectorAll('.chooseAge .item')
+const childrenInfo = document.querySelector('.childrenInfo')
+const chooseAge = document.querySelector('.chooseAge')
 
+
+ageButtons.forEach(age => {
+    age.addEventListener('click', () => {
+        if (childrenCount === 0) {
+            childrenInfo.classList.toggle('active')
+        }
+
+        const childItem = document.createElement('div');
+        childItem.classList.add('item')
+        const span1 = document.createElement('span')
+        span1.classList.toggle('info')
+        const span2 = document.createElement('span');
+        span2.classList.toggle('material-symbols-outlined')
+        span2.textContent = 'do_not_disturb_on'
+
+        childItem.onclick = function (e) { this.parentNode.removeChild(this) };
+
+
+        span1.textContent = `Ребёнок - ${age.textContent} ${age.textContent === 'До года' ? '' : ''}${age.textContent === '1' ? 'год' : ''}${age.textContent >= 2 && age.textContent <= 4 ? 'года' : ''}${age.textContent >= 5 ? 'лет' : ''}`
+
+        childItem.appendChild(span1)
+        childItem.appendChild(span2)
+
+
+        childrenInfo.appendChild(childItem)
+
+
+        childrenCount++
+
+        chooseAge.classList.toggle('active')
+    })
+})
+
+
+
+const addChild = document.querySelector('.addChild')
+addChild.addEventListener('click', () => {
+    chooseAge.classList.toggle('active')
+})
 
 const sendMessage = () => {
-    const text = `<b>Данные с сайта:</b> %0A<b>Имя:</b> ${username.value} %0A<b>Город вылета</b> ${city.value} %0A<b>Страна:</b> ${country.value} %0A<b>Дата вылета:</b> ${dateRange.value} %0A<b>Гибкий вылет(+/- 2 дня):</b> ${plusminus.checked ? 'Есть' : 'Отсуствует'} %0A<b>Количество ночей:</b> ${nights.value} %0A<b>Количество взрослых:</b> ${adults.value} %0A<b>Наличие детей:</b> ${childCheck.checked ? 'Есть' : 'Отсуствует'} %0A<b>Количество детей: </b> ${childCheck.checked ? childCount.value : 0} %0A<b>Телефон: </b> ${phone.value} %0A`
+
+    let childContent = ''
+    childrenInfo.querySelectorAll('.item').forEach(item => {
+        childContent += item.querySelector('.info').textContent + '; '
+    })
 
 
+    const text = `<b>Данные с сайта:</b> %0A<b>Имя:</b> ${username.value} %0A<b>Город вылета</b> ${city.value} %0A<b>Страна:</b> ${country.value} %0A<b>Дата вылета:</b> ${dateRange.value} %0A<b>Гибкий вылет(+/- 2 дня):</b> ${plusminus.checked ? 'Есть' : 'Отсуствует'} %0A<b>Количество ночей:</b> ${nights.value} %0A<b>Количество взрослых:</b> ${adults.value} %0A<b>Наличие детей:</b> ${childCheck.checked ? 'Есть' : 'Отсуствует'} %0A<b>Информация о детях: </b> %0A${childCheck.checked ? childContent : 'Отсуствует'} %0A<b>Телефон: </b> ${phone.value} %0A`
+
+
+    console.log(text)
 
     const t = "7278696132:AAGj63oJ3wQweBjDn_cAZstJ3o4K6XayuLg"
     const cid = -4220764074
@@ -121,13 +172,16 @@ const sendMessage = () => {
 const reset = () => {
     username.value = ''
     nights.value = ''
+    childrenInfo.textContent = ''
+    // childrenCount === 0
+    chooseAge.classList.toggle('active')
     if (childCheck.checked === true) {
         childCheck.checked = false
-        childCount.required = false
+        // childCount.required = false
         document.querySelector('.childHolder').classList.remove('active')
     }
 
-    childCount.value = ""
+    // childCount.value = ""
     phone.value = ""
 
 

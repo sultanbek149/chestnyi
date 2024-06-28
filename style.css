@@ -736,17 +736,6 @@ label {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.childHolder {
-  height: 0px;
-  overflow: hidden;
-  transition: all 0.3s;
-}
-
-.childHolder.active {
-  height: fit-content;
-  padding-bottom: 24px;
-}
-
 .field textarea {
   font-size: 16px;
   line-height: 28px;
@@ -1356,7 +1345,8 @@ a.ssolink {
   display: none;
 }
 
-.cityRent, .countries {
+.cityRent,
+.countries {
   gap: 10px;
 }
 
@@ -1498,8 +1488,6 @@ h2 {
   z-index: 1003;
 }
 
-
-
 .reviews {
   /* padding-inline: 20px; */
   margin-bottom: 40px;
@@ -1544,4 +1532,85 @@ h3 {
 .review-name {
   margin-top: auto;
   font-weight: 600;
+}
+
+.childHolder,
+.chooseAge {
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
+}
+
+.childHolder.active {
+  height: fit-content;
+  padding-bottom: 24px;
+  transition: all 0.1s ease-in-out;
+}
+
+.chooseAge.active {
+  height: fit-content;
+  transition: all 0.1s ease-in-out;
+}
+
+.childHolder .flex {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.childHolder .chooseAge .flex div {
+  background-color: #fff;
+  /* width: 45px; */
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.addChild {
+  margin-top: 15px;
+  font-weight: bold;
+  padding-block: 0.5rem;
+  padding-inline-start: 1rem;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.childTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.childrenInfo {
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
+}
+
+.childrenInfo.active {
+  height: fit-content;
+  /* padding-bottom: 24px; */
+  transition: all 0.1s ease-in-out;
+}
+
+.childrenInfo .item {
+  position: relative;
+  font-weight: 500;
+  background-color: #fff;
+  border-radius: 4px;
+  padding-inline:10px;
+  padding-top: 7px;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+.childrenInfo .item span.material-symbols-outlined {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  /* border: 1px solid #000; */
+  /* border-radius: 50px; */
+  text-align: center;
 }

@@ -88,8 +88,8 @@
                                 <form id="rentForm" action="POST">
                                     <div class="field padding-bottom--24">
                                         <label for="username">Имя</label>
-                                        <input type="text" class="serviceInp" name="username" placeholder="Введите своё имя" id="username"
-                                            required="">
+                                        <input type="text" class="serviceInp" name="username"
+                                            placeholder="Введите своё имя" id="username" required="">
                                     </div>
 
                                     <div class="field padding-bottom--24">
@@ -111,34 +111,66 @@
                                     </div>
                                     <div class="flex items-center field check"
                                         style="justify-content: space-between; padding-bottom: 16px; padding-top: 6px;">
-                                        <label style="margin-bottom: 0; font-weight: 600;">Гибкий вылет. Дата +/- 2
+                                        <label style="margin-bottom: 0; font-weight: 700;">Гибкий вылет. Дата +/- 2
                                             дня</label>
                                         <input id="plusminus" type="checkbox" class="serviceInp form-control" checked />
                                     </div>
 
                                     <div class="flex items-center num field padding-bottom--24"
                                         style="justify-content: space-between;">
-                                        <label style="margin-bottom: 0; font-weight: 600; width: 100%;">Количество
+                                        <label style="margin-bottom: 0; font-weight: 700; width: 100%;">Количество
                                             ночей</label>
-                                        <input id="nights" type="text" class="serviceInp form-control"
-                                            placeholder="от 7 - до 9" autocomplete="off" required />
+                                        <input id="nights" type="text" class="serviceInp form-control" placeholder=""
+                                            autocomplete="off" required />
                                     </div>
 
                                     <div class="flex items-center field" style="justify-content: space-between;">
-                                        <label style="margin-bottom: 0; font-weight: 600; width: 100%;">Взрослые</label>
+                                        <label style="margin-bottom: 0; font-weight: 700; width: 100%;">Взрослые</label>
                                         <input id="adults" type="number" class="serviceInp form-control" value="2"
                                             required />
                                     </div>
 
                                     <div class="flex items-center field check padding-bottom--24"
-                                        style="justify-content: space-between; padding-bottom: 8px; padding-top: 6px;">
-                                        <label style="margin-bottom: 0; font-weight: 600;">Наличие детей (до 16
+                                        style="justify-content: space-between; padding-bottom: 12px; padding-top: 12px;">
+                                        <label style="margin-bottom: 0; font-weight: 700;">Наличие детей (до 16
                                             лет)</label>
                                         <input id="child" type="checkbox" class="serviceInp form-control">
                                     </div>
                                     <div class="field childHolder">
-                                        <input type="number" name="username" placeholder='Количество детей'
-                                            id="childCount">
+                                        <!-- <input type="number" name="username" placeholder='Количество детей'
+                                            id="childCount"> -->
+
+                                        <div class="childrenInfo">
+                                        </div>
+
+                                        <div class="chooseAge active">
+                                            <div class="childTitle">
+                                                Укажите возвраст ребёнка
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item 0">До года</div>
+                                                <div class="item 1">1</div>
+                                                <div class="item 2">2</div>
+                                                <div class="item 3">3</div>
+                                                <div class="item ">4</div>
+                                                <div class="item">5</div>
+                                                <div class="item">6</div>
+                                                <div class="item">7</div>
+                                                <div class="item">8</div>
+                                                <div class="item">9</div>
+                                                <div class="item">10</div>
+                                                <div class="item">11</div>
+                                                <div class="item">12</div>
+                                                <div class="item">13</div>
+                                                <div class="item">14</div>
+                                                <div class="item">15</div>
+                                                <div class="item">16</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="addChild">
+                                            Добавить ребенка
+                                        </div>
                                     </div>
                                     <!-- </div> -->
 
