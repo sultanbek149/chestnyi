@@ -1265,7 +1265,6 @@ a.ssolink {
   left: 100vw;
   right: -100vw;
   width: 100vw;
-  height: 101vh;
   padding-bottom: 20px;
   color: #000;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px rgba(0, 0, 0, 0.14),
@@ -1308,6 +1307,13 @@ body:has(.present-country.active) {
 
 .present-country .present-body .flex {
   gap: 10px;
+}
+
+.present-country {
+  height: 110vh;
+}
+.present-city {
+  height: 110vh;
 }
 
 .present-rentData,
@@ -1615,7 +1621,7 @@ h3 {
   font-weight: 500;
   background-color: #fff;
   border-radius: 4px;
-  padding-inline:10px;
+  padding-inline: 10px;
   padding-top: 7px;
   padding-bottom: 6px;
   margin-bottom: 10px;
@@ -1631,6 +1637,6 @@ h3 {
   text-align: center;
 }
 
-input[type='button'] {
+input[type="button"] {
   text-align: start;
 }
