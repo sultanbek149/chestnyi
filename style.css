@@ -1500,7 +1500,7 @@ h2 {
 
 .reviews {
   /* padding-inline: 20px; */
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -1640,4 +1640,53 @@ h3 {
 
 input[type="button"] {
   text-align: start;
+}
+
+input[type="submit"] {
+  background-color: #ff3939;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+}
+
+input[type="submit"]:hover {
+  border: none !important;
+  scale: 1.02;
+  transition: all 0.5s ease;
+}
+
+.btn-pulse {
+  animation: pulse 2s infinite;
+}
+
+.ease-linear {
+  transition-timing-function: linear;
+}
+
+.transition {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 #fe000099;
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px #f4040400;
+  }
+
+  to {
+    box-shadow: 0 0 #f6040400;
+  }
 }
