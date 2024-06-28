@@ -1076,13 +1076,13 @@ a.ssolink {
 }
 .modal-window > div {
   width: 93%;
-  max-width: 380px;
+  max-width: 400px;
   position: absolute;
   border: 0.1px solid hsl(0, 0%, 80%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 2em 2em 3em;
+  padding: 1.7rem 2rem 2.8rem;
   background: white;
 }
 .modal-window header {
