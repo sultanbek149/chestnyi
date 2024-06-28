@@ -1614,3 +1614,7 @@ h3 {
   /* border-radius: 50px; */
   text-align: center;
 }
+
+input[type='button'] {
+  text-align: start;
+}
