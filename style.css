@@ -1574,6 +1574,14 @@ h3 {
   padding-inline-start: 1rem;
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
+  position: relative;
+}
+
+.addChild span {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
 }
 
 .childTitle {

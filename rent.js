@@ -43,7 +43,7 @@ childCheck.addEventListener('click', () => {
 })
 
 
-let objectDate = new Date(new Date().getTime() + 120 * 60 * 60 * 1000)
+let objectDate = new Date(new Date().getTime() + 96 * 60 * 60 * 1000)
 
 // Extract the day, month, and year
 const day = String(objectDate.getDate()).padStart(2, '0');
