@@ -1271,7 +1271,7 @@ a.ssolink {
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px rgba(0, 0, 0, 0.14),
     0 1px 10px rgba(0, 0, 0, 0.12);
 
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
 
   transition: all 200ms ease-in-out;
@@ -1280,7 +1280,6 @@ a.ssolink {
 .present-city.active {
   right: 0;
   left: 0;
-  transition: all 0ms ease-in-out;
 }
 
 .cityRent {
