@@ -1271,7 +1271,6 @@ a.ssolink {
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px rgba(0, 0, 0, 0.14),
     0 1px 10px rgba(0, 0, 0, 0.12);
 
-  overflow-y: hidden;
   overflow-x: hidden;
 
   transition: all 200ms ease-in-out;
@@ -1280,6 +1279,14 @@ a.ssolink {
 .present-city.active {
   right: 0;
   left: 0;
+}
+
+body:has(.present-city.active) {
+  overflow-y: hidden;
+}
+
+body:has(.present-country.active) {
+  overflow-y: hidden;
 }
 
 .cityRent {
@@ -1607,7 +1614,7 @@ h3 {
   font-weight: 500;
   background-color: #fff;
   border-radius: 4px;
-  padding-inline:10px;
+  padding-inline: 10px;
   padding-top: 7px;
   padding-bottom: 6px;
   margin-bottom: 10px;
@@ -1623,6 +1630,6 @@ h3 {
   text-align: center;
 }
 
-input[type='button'] {
+input[type="button"] {
   text-align: start;
 }
