@@ -1265,7 +1265,7 @@ a.ssolink {
   left: 100vw;
   right: -100vw;
   width: 100vw;
-  bottom: 0;
+  height: 101vh;
   padding-bottom: 20px;
   color: #000;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px rgba(0, 0, 0, 0.14),
@@ -1283,6 +1283,10 @@ a.ssolink {
 }
 
 body:has(.present-city.active) {
+  overflow-y: hidden;
+}
+
+body:has(.present-country.active) {
   overflow-y: hidden;
 }
 
